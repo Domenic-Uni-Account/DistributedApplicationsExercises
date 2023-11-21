@@ -1,0 +1,38 @@
+<!-- Author: -->
+<!-- Created: -->
+<!-- Matriculation Number: -->
+<!DOCTYPE HTML>
+
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head> 
+    <title>Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <form action="#" th:action="@{/index}" th:object="${formObject}" method="post">
+    	<p>Name: <input type="text" th:field="*{name}" /></p>
+    	<p>Phone number: <input type="text" th:field="*{number}" /></p>
+                
+        <p><input type="submit" value="Submit" />
+    </form>
+    
+    <table>
+		<thead>
+	        <tr>
+				<th>Name</th>
+				<th>Phone number</th>
+			</tr>
+	    </thead>
+	    
+		<tbody>        
+	        <tr th:each="user : ${users}">
+				<td th:text="${user.name}" />
+				<td th:text="${user.number}" />
+			</tr>
+	    </tbody>
+	</table>
+</body>
+
+</html>
